@@ -1,31 +1,31 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-// import path from 'path'
-// import { fileURLToPath } from 'url'
-// import { dirname } from 'path'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
 
 // Setup Express
 const app = express()
 const port = 8080
-// const __fileName = fileURLToPath(import.meta.url)
-// const __dirName = dirname(__fileName)
+const __fileName = fileURLToPath(import.meta.url)
+const __dirName = dirname(__fileName)
 
-// console.log(import.meta.url)
-// console.log(__fileName)
-// console.log(__dirName)
+console.log(import.meta.url)
+console.log(__fileName)
+console.log(__dirName)
 
-// // View Template Engine Setup
-// app.set('views', path.join(__dirName, 'views'))
-// app.set('view engine', 'ejs')
+// View Template Engine Setup
+app.set('views', path.join(__dirName, 'views'))
+app.set('view engine', 'ejs')
 
 // Body Parser Middleware
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 
-// app.get('/', (request, response) => {
-//     response.render('login')
-// })
+app.get('/', (request, response) => {
+    response.render('login')
+})
 
 app.post('/login', (request, response) => {
    const {username, password} = request.body
