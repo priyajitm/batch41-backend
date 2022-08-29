@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
+import {mongoURI} from './datapath.js'
 
-const uri = "mongodb+srv://priyajit:monika@cluster0.bb04n.mongodb.net/?retryWrites=true&w=majority";
 const DBConnect = async () => {
     try {
-        await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+        await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
             console.log('DB Connected')
         })
     } catch (error) {

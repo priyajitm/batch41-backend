@@ -1,0 +1,1 @@
+export const mongoURI = 'mongodb+srv://priyajit:indiatimes@cluster0.bb04n.mongodb.net/edureka?retryWrites=true&w=majority';
